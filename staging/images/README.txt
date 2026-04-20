@@ -1,6 +1,6 @@
 Photos currently used on the site and where they appear:
 
-  action_shot.png        — Hero (top of page)
+  mini2.jpeg             — Hero (top of page)
   belle.jpg              — About section portrait
   lei.png                — Gallery tile 1
   mothers_day_grand.png  — Gallery tile 2
