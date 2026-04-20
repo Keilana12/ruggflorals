@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rugg Florals | Bouquets by Isabelle Rugg</title>
+  <meta name="description" content="Small florist run by Isabelle Rugg. Bouquets in three sizes, with pickup and delivery in Davis, Stockton, and Foster City." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #faf6f1;
+      --cream-warm: #f3ede3;
+      --ink: #2c3a2a;
+      --ink-soft: #4a5646;
+      --sage: #7e9670;
+      --sage-deep: #546b49;
+      --blush: #e8b4c0;
+      --blush-deep: #c47a8f;
+      --rule: #d9d3c6;
+      --shadow: 0 1px 2px rgba(44, 58, 42, 0.06), 0 8px 24px rgba(44, 58, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0 0 0.5em;
+    }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.15; }
+    h3 { font-size: 1.35rem; line-height: 1.3; }
+    p { margin: 0 0 1em; }
+    a { color: var(--sage-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:hover { color: var(--blush-deep); }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- Nav ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(250, 246, 241, 0.92);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .brand {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: var(--blush-deep); }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.75rem;
+      background: var(--sage-deep);
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 999px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn:hover {
+      background: var(--blush-deep);
+      color: var(--cream);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+    }
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      padding: 6rem 0 5rem;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 20%, rgba(232, 180, 192, 0.35), transparent 50%),
+        radial-gradient(ellipse at 85% 80%, rgba(126, 150, 112, 0.25), transparent 55%);
+      z-index: 0;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      color: var(--sage-deep);
+      margin-bottom: 1rem;
+    }
+    .hero-lede {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 30rem;
+      margin-bottom: 2rem;
+    }
+    .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .hero-image {
+      aspect-ratio: 4 / 5;
+      border-radius: 4px;
+      background:
+        linear-gradient(135deg, rgba(232, 180, 192, 0.45), rgba(126, 150, 112, 0.45)),
+        var(--cream-warm);
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .hero-image.has-photo {
+      background-image: url('images/action_shot.png');
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 5rem 0; }
+    section + section { border-top: 1px solid var(--rule); }
+    .section-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: var(--sage-deep);
+      margin-bottom: 0.75rem;
+    }
+    .section-lede {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      max-width: 42rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .about-portrait {
+      aspect-ratio: 3 / 4;
+      background:
+        linear-gradient(160deg, rgba(126, 150, 112, 0.3), rgba(232, 180, 192, 0.3)),
+        var(--cream-warm);
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+    }
+    .about-portrait.has-photo { background-image: url('images/belle.jpg'); }
+
+    /* ---------- Bouquets ---------- */
+    .bouquets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 820px) {
+      .bouquets-grid { grid-template-columns: 1fr; }
+    }
+    .bouquet {
+      background: var(--cream-warm);
+      padding: 2rem 1.75rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .bouquet:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    .bouquet-price {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      color: var(--blush-deep);
+      margin-top: 0.5rem;
+    }
+    .bouquet-note {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+    .price-footnote {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* ---------- Gallery ---------- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 820px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+    .gallery-item {
+      aspect-ratio: 1 / 1;
+      background:
+        linear-gradient(135deg, rgba(232, 180, 192, 0.35), rgba(126, 150, 112, 0.35)),
+        var(--cream-warm);
+      background-size: cover;
+      background-position: center;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-soft);
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    .gallery-item.has-photo { color: transparent; }
+    .gallery-item.g1.has-photo { background-image: url('images/lei.png'); }
+    .gallery-item.g2.has-photo { background-image: url('images/mothers_day_grand.png'); }
+    .gallery-item.g3.has-photo { background-image: url('images/first_sale_mini.png'); }
+    .gallery-item.g4.has-photo { background-image: url('images/elements.png'); }
+    .gallery-item.g5.has-photo { background-image: url('images/mothers_day_mini.png'); }
+    .gallery-item.g6.has-photo { background-image: url('images/win_free.png'); }
+
+    .gallery-cta { text-align: center; margin-top: 2rem; }
+
+    /* ---------- Order ---------- */
+    .order {
+      background: var(--cream-warm);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 820px) {
+      .order-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .order-steps { list-style: none; padding: 0; margin: 0 0 2rem; }
+    .order-steps li {
+      padding: 0.75rem 0 0.75rem 2.5rem;
+      position: relative;
+      color: var(--ink-soft);
+      border-bottom: 1px solid var(--rule);
+    }
+    .order-steps li:last-child { border-bottom: none; }
+    .order-steps li::before {
+      content: counter(step);
+      counter-increment: step;
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      background: var(--sage-deep);
+      color: var(--cream);
+      border-radius: 50%;
+      font-family: 'Fraunces', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+    .order-steps { counter-reset: step; }
+
+    /* ---------- Delivery ---------- */
+    .cities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 640px) { .cities { grid-template-columns: 1fr; } }
+    .city {
+      text-align: center;
+      padding: 2rem 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .city h3 { margin-bottom: 0.25rem; }
+    .city p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+    /* ---------- Policies ---------- */
+    .policies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 820px) {
+      .policies-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .policy h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--sage-deep);
+    }
+    .policy p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+    footer a { color: var(--blush); }
+    footer a:hover { color: var(--cream); }
+    .footer-brand {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-tag { color: rgba(250, 246, 241, 0.7); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .footer-fine { margin-top: 2rem; font-size: 0.8rem; color: rgba(250, 246, 241, 0.5); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#top" class="brand">Rugg Florals</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#bouquets">Bouquets</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#order">Order</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#policies">Policies</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-eyebrow">Davis · Stockton · Foster City</div>
+          <h1>Fresh bouquets, made by hand.</h1>
+          <p class="hero-lede">I'm Isabelle Rugg, a florist in California. I arrange every bouquet to order.</p>
+          <div class="hero-cta">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPZ7vKZG-YZdNIi1EvmD1CcRkfOL1LRbLD6FessReHGhyfow/viewform" class="btn" target="_blank" rel="noopener">Order a bouquet</a>
+            <a href="#bouquets" class="btn btn-ghost">See the bouquets</a>
+          </div>
+        </div>
+        <div class="hero-image has-photo" role="img" aria-label="Isabelle arranging a bouquet"></div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-portrait has-photo" role="img" aria-label="Isabelle Rugg at a redwood waterfall"></div>
+          <div>
+            <div class="section-eyebrow">About</div>
+            <h2>Hi, I'm Isabelle.</h2>
+            <p>I'm a senior at UC Davis studying Sustainable Environmental Design. I've always loved plants and color, and arranging flowers is where those two things come together for me.</p>
+            <p>I make every bouquet myself, usually the morning it goes out. If there's a color or flower you want, let me know on the order form and I'll do my best.</p>
+            <p><a href="https://www.instagram.com/ruggflorals/" target="_blank" rel="noopener">Follow on Instagram: @ruggflorals</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BOUQUETS ========== -->
+    <section id="bouquets">
+      <div class="container">
+        <div class="section-eyebrow">The bouquets</div>
+        <h2>Three sizes. Made to your colors.</h2>
+        <p class="section-lede">Every bouquet is arranged to order. Tell me your favorite colors or flowers on the form, and I'll work with what's fresh that day.</p>
+
+        <div class="bouquets-grid">
+          <div class="bouquet">
+            <h3>Mini</h3>
+            <div class="bouquet-price">$25</div>
+            <p>A small bouquet, just right for a thank-you or a pick-me-up.</p>
+            <div class="bouquet-note">Good for a gift or a desk.</div>
+          </div>
+
+          <div class="bouquet">
+            <h3>Grand</h3>
+            <div class="bouquet-price">$50</div>
+            <p>A fuller arrangement with a focal flower and layered textures. My most popular size.</p>
+            <div class="bouquet-note">Birthdays, Mother's Day, anniversaries.</div>
+          </div>
+
+          <div class="bouquet">
+            <h3>Jumbo</h3>
+            <div class="bouquet-price">$100</div>
+            <p>A large, full bouquet that works well as a centerpiece. Happy to do a custom color palette.</p>
+            <div class="bouquet-note">Weddings, hostess gifts, special occasions.</div>
+          </div>
+        </div>
+
+        <p class="price-footnote">Prices include sales tax. Need a custom size? Pick "Other" on the form and send me a note.</p>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-eyebrow">Recent work</div>
+        <h2>What I've been making.</h2>
+        <p class="section-lede">Peonies, roses, carnations, baby's breath, lavender. A few pieces from the last few weeks.</p>
+
+        <div class="gallery">
+          <div class="gallery-item g1 has-photo" role="img" aria-label="Pink flower lei"></div>
+          <div class="gallery-item g2 has-photo" role="img" aria-label="Grand Mother's Day bouquet"></div>
+          <div class="gallery-item g3 has-photo" role="img" aria-label="Yellow mini bouquet in a vase"></div>
+          <div class="gallery-item g4 has-photo" role="img" aria-label="The elements of a Rugg Florals bouquet"></div>
+          <div class="gallery-item g5 has-photo" role="img" aria-label="Mini Mother's Day bouquet"></div>
+          <div class="gallery-item g6 has-photo" role="img" aria-label="Win a free Mother's Day bouquet promotion"></div>
+        </div>
+
+        <div class="gallery-cta">
+          <a href="https://www.instagram.com/ruggflorals/" target="_blank" rel="noopener" class="btn btn-ghost">See more on Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ORDER ========== -->
+    <section id="order" class="order">
+      <div class="container">
+        <div class="order-grid">
+          <div>
+            <div class="section-eyebrow">How to order</div>
+            <h2>How it works.</h2>
+            <ol class="order-steps">
+              <li>Fill out the form with your size, colors, and pickup or delivery city.</li>
+              <li>I'll message you to confirm timing and payment.</li>
+              <li>I arrange your bouquet the day it goes out.</li>
+              <li>You pick it up, or I drop it off.</li>
+            </ol>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPZ7vKZG-YZdNIi1EvmD1CcRkfOL1LRbLD6FessReHGhyfow/viewform" class="btn" target="_blank" rel="noopener">Start an order</a>
+          </div>
+          <div>
+            <h3>Helpful to know</h3>
+            <p><strong>Color &amp; flower requests.</strong> I do my best, but what I use depends on what's in season.</p>
+            <p><strong>Handwritten cards.</strong> Free. Just tell me what you'd like it to say.</p>
+            <p><strong>Delivery.</strong> $10 in the service area. Pickup is free.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DELIVERY ========== -->
+    <section id="delivery">
+      <div class="container">
+        <div class="section-eyebrow">Where I deliver</div>
+        <h2>Three cities. Pickup or delivery.</h2>
+        <p class="section-lede">Days vary by city. I'll confirm a date once I see your order.</p>
+        <div class="cities">
+          <div class="city">
+            <h3>Davis</h3>
+            <p>Campus drops & local delivery</p>
+          </div>
+          <div class="city">
+            <h3>Stockton</h3>
+            <p>Pickup or delivery</p>
+          </div>
+          <div class="city">
+            <h3>Foster City</h3>
+            <p>Pickup or delivery</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== POLICIES ========== -->
+    <section id="policies">
+      <div class="container">
+        <div class="section-eyebrow">The fine print</div>
+        <h2>Policies</h2>
+        <p class="section-lede">Here's how orders work.</p>
+
+        <div class="policies-grid">
+          <div class="policy">
+            <h3>Substitutions</h3>
+            <p>Flowers are seasonal, so what's available shifts day to day. If I can't get a specific flower, I'll substitute something of equal or greater value in a similar color. I honor requests from the order form as best I can.</p>
+          </div>
+
+          <div class="policy">
+            <h3>Freshness &amp; refunds</h3>
+            <p>I arrange bouquets the day they go out. Because flowers are perishable, I can't refund an order once it's arranged. If something's off, message me within 24 hours and I'll make it right.</p>
+          </div>
+
+          <div class="policy">
+            <h3>Your information</h3>
+            <p>I use the info from your order form (name, contact, address) only to fulfill your order. I never share or sell it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">Rugg Florals</div>
+      <div class="footer-tag">Made in California</div>
+      <div class="footer-links">
+        <a href="mailto:keilana@gmail.com">keilana@gmail.com</a>
+        <a href="https://www.instagram.com/ruggflorals/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPZ7vKZG-YZdNIi1EvmD1CcRkfOL1LRbLD6FessReHGhyfow/viewform" target="_blank" rel="noopener">Order form</a>
+      </div>
+      <div class="footer-fine">© <span id="year"></span> Rugg Florals. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
