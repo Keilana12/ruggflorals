@@ -60,6 +60,43 @@
       padding: 0 1.5rem;
     }
 
+    /* ---------- Announcement banner ---------- */
+    .announcement {
+      background: var(--sage-deep);
+      color: var(--cream);
+      padding: 0.7rem 0;
+      font-size: 0.95rem;
+    }
+    .announcement-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.9rem;
+      text-align: center;
+    }
+    .announcement-badge {
+      background: var(--blush);
+      color: var(--ink);
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .announcement-meta { color: rgba(250, 246, 241, 0.78); font-size: 0.9rem; }
+    .announcement a {
+      color: var(--cream);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      white-space: nowrap;
+    }
+    .announcement a:hover { color: var(--blush); }
+    @media (max-width: 640px) {
+      .announcement-inner { flex-direction: column; gap: 0.35rem; }
+    }
+
     /* ---------- Nav ---------- */
     nav {
       position: sticky;
@@ -392,6 +429,22 @@
   </style>
 </head>
 <body>
+
+  <!-- ============================================================
+       ANNOUNCEMENT BANNER
+       To HIDE: add the word `hidden` to the <section> tag below.
+                e.g. <section class="announcement" hidden>
+       To SHOW: remove the word `hidden`.
+       To UPDATE: edit the text, date, address, and map link below.
+       ============================================================ -->
+  <section class="announcement">
+    <div class="container announcement-inner">
+      <span class="announcement-badge">This Saturday</span>
+      <span>Come find me at my first market! She Makes Market at He Brews Coffee &amp; Tea House.</span>
+      <span class="announcement-meta">Apr 25 · 10am–3pm · 1540 Jefferson Blvd, West Sacramento</span>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=1540+Jefferson+Blvd+West+Sacramento+CA+95691" target="_blank" rel="noopener">Map &rsaquo;</a>
+    </div>
+  </section>
 
   <nav>
     <div class="nav-inner">
