@@ -2,12 +2,12 @@ Photos currently used on the site and where they appear:
 
   mini2.jpeg             — Hero (top of page)
   belle.jpg              — About section portrait
-  lei.png                — Gallery tile 1
-  mothers_day_grand.png  — Gallery tile 2
-  first_sale_mini.png    — Gallery tile 3
-  elements.png           — Gallery tile 4
-  mothers_day_mini.png   — Gallery tile 5
-  win_free.png           — Gallery tile 6
+  img_1.png              — Gallery tile 1 (Isabelle in garden with bouquet)
+  img_2.png              — Gallery tile 2 (wrapped bouquet, denim sleeve)
+  lei.png                — Gallery tile 3 (pink lei)
+  first_sale_mini.png    — Gallery tile 4 (yellow + lavender vase bouquet)
+  IMG_8507.jpeg          — Gallery tile 5 (market booth)
+  action_shot.png        — Gallery tile 6 (working with tulips)
 
 To swap a photo: replace the file in this folder with a new image of the same filename.
 To add new photos or change what appears where: open ../index.html, find the gallery
