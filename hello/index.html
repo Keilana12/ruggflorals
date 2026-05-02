@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hi — Rugg Florals</title>
+  <meta name="description" content="A friendly landing page from Isabelle at Rugg Florals." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://ruggflorals.com/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- ============================================================
+       REDIRECT
+       To ENABLE: uncomment the <meta> line below and set the url.
+       To DISABLE: comment it out (the friendly fallback page shows).
+
+       Examples of where to point it:
+         url=https://ruggflorals.com/#gallery
+         url=https://www.instagram.com/ruggflorals
+         url=https://www.tiktok.com/@ruggflorals
+         url=https://docs.google.com/forms/d/e/1FAIpQLSdPZ7vKZG-YZdNIi1EvmD1CcRkfOL1LRbLD6FessReHGhyfow/viewform?usp=header
+       ============================================================ -->
+  <!-- <meta http-equiv="refresh" content="0; url=https://ruggflorals.com/#gallery" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #faf6f1;
+      --ink: #2c2a26;
+      --sage: #8fa37e;
+      --sage-deep: #546b49;
+      --blush: #e8b4c0;
+      --blush-deep: #c47a8f;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+      line-height: 1.55;
+    }
+    main {
+      width: 100%;
+      max-width: 36rem;
+      background: #fff;
+      border: 1px solid rgba(44, 42, 38, 0.08);
+      border-radius: 18px;
+      padding: 2.25rem 1.75rem;
+      box-shadow: 0 12px 40px rgba(44, 42, 38, 0.06);
+    }
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.9rem, 5vw, 2.4rem);
+      margin: 0 0 1rem;
+      color: var(--sage-deep);
+    }
+    p { margin: 0 0 1rem; }
+    ul.links {
+      list-style: none;
+      margin: 1.75rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+    ul.links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.85rem 1.05rem;
+      border-radius: 12px;
+      background: var(--cream);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid rgba(143, 163, 126, 0.25);
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+    ul.links a:hover {
+      background: #fff;
+      border-color: var(--sage);
+      transform: translateY(-1px);
+    }
+    ul.links a::after {
+      content: "›";
+      color: var(--blush-deep);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .footer {
+      margin-top: 1.75rem;
+      font-size: 0.85rem;
+      color: rgba(44, 42, 38, 0.55);
+      text-align: center;
+    }
+    .footer a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hi!</h1>
+    <p>You've landed on the page that I give out to friends, both ones I've known for years and new ones I've met at markets.</p>
+    <p>I usually have this page set up to redirect automatically to one of my other pages or social media accounts, but it must not be set up that way right now or for some reason your browser didn't follow the redirect link.</p>
+    <p>You can use one of the links below to see more of my content.</p>
+
+    <ul class="links">
+      <li><a href="https://ruggflorals.com">Main site</a></li>
+      <li><a href="https://www.instagram.com/ruggflorals" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@ruggflorals" target="_blank" rel="noopener">TikTok</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPZ7vKZG-YZdNIi1EvmD1CcRkfOL1LRbLD6FessReHGhyfow/viewform?usp=header" target="_blank" rel="noopener">Order form</a></li>
+    </ul>
+
+    <p class="footer">— Isabelle, <a href="https://ruggflorals.com">Rugg Florals</a></p>
+  </main>
+</body>
+</html>
